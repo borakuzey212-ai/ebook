@@ -64,3 +64,14 @@ Bu klasör Shopify projesi DEĞİL — üst klasördeki CLAUDE.md'nin Liquid kur
 - Ürün sayfası değişmedi. Ölü CSS (`.hero__stack`, `.rows`, `.steps`) silindi.
 
 **QA'de bulunan:** `scroll-snap` raftaki sol padding'i yutuyordu → `scroll-padding-inline` eklendi. 1440 / 760 / 390 kontrol edildi, konsol temiz.
+
+## 2026-10-14 — Stripe hesap doğrulaması için şirket/yasal bilgiler
+
+Kullanıcı Stripe hesabındaki işletme bilgilerini paylaştı (IEM GLOBAL LTD, Londra kayıtlı adres, destek telefonu, statement descriptor `HTTPS://WWW.ORVENIO.CO`, site `www.orvenio.com`). Stripe'ın web sitesinde aradığı öğeler eklendi:
+- `public/contact.html` — destek e-posta/telefon, tüzel ad, kayıtlı ofis, ekstre açıklaması, ödeme/teslimat açıklaması.
+- `public/legal.html` — Terms of service, Privacy policy (UK GDPR), Refunds & delivery (14 gün iade, e-posta ile anında teslim). Footer'daki `#` linkleri bu sayfalara bağlandı.
+- Footer'a şirket künyesi + destek + descriptor; "Portfolio demo · test mode" satırı kaldırıldı (gerçek hesap için yanlış sinyal).
+- SSS'ye "What will appear on my card statement?" eklendi; success sayfasına destek satırı.
+
+**Bilerek eklenmeyenler:** hesap temsilcisinin doğum tarihi ve ev adresi (KYC verisi, sitede olmamalı). **Eksik:** Company Registration Number — UK şirketleri için sitede zorunlu, kullanıcıdan istendi.
+**Öneri:** statement descriptor'ı `ORVENIO FITNESS` yapmak (okunabilir, chargeback'i azaltır); yapılırsa sitedeki 4 yerde metin güncellenmeli (grep `ORVENIO.CO`).

@@ -1575,6 +1575,132 @@ p {
   word-break: break-all;
 }
 
+/* ---------- Content pages (contact, legal) ---------- */
+.page-head {
+  padding-block: clamp(48px, 7vw, 96px) clamp(24px, 4vw, 44px);
+  margin-bottom: clamp(32px, 5vw, 64px);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-head .h-l {
+  margin: 14px 0 20px;
+}
+
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+}
+
+.specs--contact {
+  margin: 0 0 clamp(32px, 5vw, 64px);
+}
+
+.specs--contact dd {
+  line-height: 1.5;
+}
+
+.specs--contact a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose {
+  max-width: 76ch;
+  padding-bottom: clamp(64px, 9vw, 128px);
+}
+
+.prose h2 {
+  margin: clamp(40px, 6vw, 72px) 0 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: calc(var(--header-h) + 16px);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  text-transform: uppercase;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.prose h3 {
+  margin: 28px 0 8px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.prose p,
+.prose li {
+  margin-bottom: 14px;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.prose ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.prose a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.simple__note {
+  margin-top: 28px;
+  max-width: 56ch;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.simple__note a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer__legal {
+  margin-top: -24px;
+  margin-bottom: 32px;
+  max-width: 78ch;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--dim);
+}
+
+.footer__legal p {
+  margin-bottom: 8px;
+}
+
+.footer__legal strong {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.footer__legal a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ---------- Toast ---------- */
 .toast {
   position: fixed;
