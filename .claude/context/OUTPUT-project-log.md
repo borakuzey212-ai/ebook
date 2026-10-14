@@ -44,3 +44,10 @@ Bu klasör Shopify projesi DEĞİL — üst klasördeki CLAUDE.md'nin Liquid kur
 - Kullanıcı: Stripe test key alıp Netlify'da `STRIPE_SECRET_KEY` env var olarak ekleyecek; Git'e push + Netlify import.
 - Ödeme sonrası teslimat (webhook + PDF e-postası) kapsam dışı — ileride istenirse `netlify/functions/stripe-webhook.mjs` + e-posta servisi gerekir.
 - Git henüz init edilmedi (kullanıcı kendisi yükleyeceğini söyledi).
+
+## 2026-10-14 — Git'e yüklendi
+
+- Repo: https://github.com/borakuzey212-ai/ebook (public, `main`). Commit yazarı `Bora Kuzey <borakuzey212@gmail.com>` (repo-local git config).
+- Bu makinedeki gh girişi `boratsd` → repoya collaborator olarak eklendi, push öyle yapıldı. Kullanıcı isterse collaborator'ı kaldırabilir; sonraki push'lar için yeniden yetki gerekir.
+- Netlify deploy: kullanıcı web arayüzünden yapacak (Import from Git, publish `public`, env var `STRIPE_SECRET_KEY` = sk_test).
+- Güvenlik notu: kullanıcı sohbete bir `sk_live_` key yapıştırdı → iptal edip (Roll key) test key kullanması söylendi. Key hiçbir dosyaya yazılmadı.
