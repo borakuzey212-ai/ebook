@@ -73,5 +73,5 @@ Kullanıcı Stripe hesabındaki işletme bilgilerini paylaştı (IEM GLOBAL LTD,
 - Footer'a şirket künyesi + destek + descriptor; "Portfolio demo · test mode" satırı kaldırıldı (gerçek hesap için yanlış sinyal).
 - SSS'ye "What will appear on my card statement?" eklendi; success sayfasına destek satırı.
 
-**Bilerek eklenmeyenler:** hesap temsilcisinin doğum tarihi ve ev adresi (KYC verisi, sitede olmamalı). **Eksik:** Company Registration Number — UK şirketleri için sitede zorunlu, kullanıcıdan istendi.
+**Bilerek eklenmeyenler:** hesap temsilcisinin doğum tarihi ve ev adresi (KYC verisi, sitede olmamalı). **CRN 14515468** kullanıcıdan alınıp footer + contact + legal'e eklendi (982b99e). Destek e-postası info@raxaca.com olarak kalıyor (kullanıcı onayladı).
 **Öneri:** statement descriptor'ı `ORVENIO FITNESS` yapmak (okunabilir, chargeback'i azaltır); yapılırsa sitedeki 4 yerde metin güncellenmeli (grep `ORVENIO.CO`).
