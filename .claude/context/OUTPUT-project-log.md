@@ -51,3 +51,16 @@ Bu klasör Shopify projesi DEĞİL — üst klasördeki CLAUDE.md'nin Liquid kur
 - Bu makinedeki gh girişi `boratsd` → repoya collaborator olarak eklendi, push öyle yapıldı. Kullanıcı isterse collaborator'ı kaldırabilir; sonraki push'lar için yeniden yetki gerekir.
 - Netlify deploy: kullanıcı web arayüzünden yapacak (Import from Git, publish `public`, env var `STRIPE_SECRET_KEY` = sk_test).
 - Güvenlik notu: kullanıcı sohbete bir `sk_live_` key yapıştırdı → iptal edip (Roll key) test key kullanması söylendi. Key hiçbir dosyaya yazılmadı.
+
+## 2026-10-14 — Palet: Ember · Layout: "Editorial raf"
+
+**Palet.** Üç alternatif (Ember / Ice / Paper) `?theme=` ile render edilip kullanıcıya gösterildi; **Ember** seçildi (zemin `#0c0b0a`, vurgu `#ff4d1f`). CSS'te `--lime` → `--accent` olarak yeniden adlandırıldı; kapak renkleri `--cover-*` token'larına çıkarıldı; `.cover--lime` → `.cover--accent` (products.js `cover: "accent"`). Geçici tema anahtarı ve diğer paletler koddan silindi — tek palet var, tema altyapısı tutulmadı (gereksiz karmaşıklık).
+
+**Layout (ana sayfa).** Kullanıcı "biraz değiştir" dedi; 3 mockup'tan "Editorial raf" seçildi:
+- Hero: tam genişlik dev başlık (2 satır), altında lead + CTA satırı, altında yatay kaydırılabilir "raf" (12 kapak, sağa taşar, `scroll-snap`).
+- "Start here": 3 büyük kart (`.catalog--featured`).
+- "All programs": kart grid yerine numaralı içindekiler listesi (`.index-row`, grid-areas ile ≤960px'te yeniden diziliyor).
+- "How it works": 3 sütun yerine dikey zaman çizgisi (`.timeline`).
+- Ürün sayfası değişmedi. Ölü CSS (`.hero__stack`, `.rows`, `.steps`) silindi.
+
+**QA'de bulunan:** `scroll-snap` raftaki sol padding'i yutuyordu → `scroll-padding-inline` eklendi. 1440 / 760 / 390 kontrol edildi, konsol temiz.

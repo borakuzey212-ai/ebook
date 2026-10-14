@@ -8,7 +8,7 @@
   <meta property="og:type" content="website">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0b0d">
+  <meta name="theme-color" content="#0c0b0a">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,17 +40,23 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow eyebrow--lime">Digital training programs &middot; PDF &middot; Instant access</p>
-          <h1 class="display h-xl hero__title">The program is the <em>shortcut.</em></h1>
+      <div class="container hero__copy">
+        <p class="eyebrow eyebrow--accent">Digital training programs &middot; PDF &middot; Instant access</p>
+        <h1 class="display h-xl hero__title">The program is the <em>shortcut.</em></h1>
+        <div class="hero__row">
           <p class="lead">Twelve written training programs and guides — periodized, equipment-honest and ready to run from your phone. One payment. No subscription.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#programs">Browse programs <span class="btn__arrow">&rarr;</span></a>
             <a class="btn btn--ghost" href="#how">How it works</a>
           </div>
         </div>
-        <div class="hero__stack" id="hero-stack" aria-hidden="true"></div>
+      </div>
+      <div class="shelf">
+        <div class="container shelf__head">
+          <span class="eyebrow">The shelf &middot; 12 titles</span>
+          <span class="eyebrow shelf__hint">Scroll &rarr;</span>
+        </div>
+        <div class="shelf__track" id="hero-shelf" aria-label="All titles"></div>
       </div>
     </section>
 
@@ -74,7 +80,7 @@
           </div>
           <a class="btn btn--ghost btn--sm" href="#programs">All programs <span class="btn__arrow">&rarr;</span></a>
         </div>
-        <div class="rows" id="featured-rows"></div>
+        <div class="catalog catalog--featured" id="featured-grid"></div>
       </div>
     </section>
 
@@ -89,7 +95,10 @@
           <span class="catalog__count" id="catalog-count">12 titles</span>
         </div>
         <div class="filters" id="filters" role="group" aria-label="Filter by goal"></div>
-        <div class="catalog" id="catalog-grid">
+        <div class="index-head index-grid" aria-hidden="true">
+          <span>No.</span><span></span><span>Title</span><span>Format</span><span>Price</span><span></span>
+        </div>
+        <div class="index" id="catalog-list">
           <noscript><p class="catalog__empty">Enable JavaScript to browse the catalog.</p></noscript>
         </div>
       </div>
@@ -104,23 +113,29 @@
             <h2 class="display h-l">Three steps. No account.</h2>
           </div>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step__num">01</div>
-            <h3 class="step__title">Pick a program</h3>
-            <p>Filter by goal and equipment. Every page tells you exactly what you need and how long it runs — before you pay.</p>
-          </div>
-          <div class="step">
-            <div class="step__num">02</div>
-            <h3 class="step__title">Pay once with Stripe</h3>
-            <p>Card, Apple Pay or Google Pay through Stripe's hosted checkout. No account to create, nothing recurring.</p>
-          </div>
-          <div class="step">
-            <div class="step__num">03</div>
-            <h3 class="step__title">Train from the PDF</h3>
-            <p>The download link lands in your inbox within a minute. Logbook pages included — print them or use them on your phone.</p>
-          </div>
-        </div>
+        <ol class="timeline">
+          <li class="timeline__step">
+            <span class="timeline__num">01</span>
+            <div class="timeline__body">
+              <h3 class="timeline__title">Pick a program</h3>
+              <p>Filter by goal and equipment. Every page tells you exactly what you need and how long it runs — before you pay.</p>
+            </div>
+          </li>
+          <li class="timeline__step">
+            <span class="timeline__num">02</span>
+            <div class="timeline__body">
+              <h3 class="timeline__title">Pay once with Stripe</h3>
+              <p>Card, Apple Pay or Google Pay through Stripe's hosted checkout. No account to create, nothing recurring.</p>
+            </div>
+          </li>
+          <li class="timeline__step">
+            <span class="timeline__num">03</span>
+            <div class="timeline__body">
+              <h3 class="timeline__title">Train from the PDF</h3>
+              <p>The download link lands in your inbox within a minute. Logbook pages included — print them or use them on your phone.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 

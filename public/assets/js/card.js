@@ -1,5 +1,5 @@
-// Catalog card + "start here" row markup. Shared by the home page and the
-// "more programs" strip on product pages.
+// Catalog card + index-row markup. Cards are used for "Start here" and the
+// "more programs" strip on product pages; index rows build the main catalog.
 
 import { formatPrice } from "/data/products.js";
 import { renderCover } from "./cover.js";
@@ -38,18 +38,17 @@ export function renderCard(product) {
     </article>`;
 }
 
-export function renderRow(product, index) {
+export function renderIndexRow(product) {
   return `
-    <article class="row">
+    <article class="index-row index-grid">
+      <span class="index-row__num">${esc(product.number)}</span>
       ${renderCover(product, { mini: true })}
-      <div>
-        <div class="row__meta">Start here · 0${index + 1} &nbsp;/&nbsp; ${esc(product.type)} · ${esc(product.level)}</div>
-        <h3 class="row__title"><a href="/ebooks/${esc(product.slug)}">${esc(product.title)}</a></h3>
-        <p class="row__tagline">${esc(product.tagline)}</p>
+      <div class="index-row__body">
+        <h3 class="index-row__title"><a href="/ebooks/${esc(product.slug)}">${esc(product.title)}</a></h3>
+        <p class="index-row__tagline">${esc(product.tagline)}</p>
       </div>
-      <div class="row__end">
-        ${priceMarkup(product)}
-        ${buyButton(product)}
-      </div>
+      <div class="index-row__meta">${esc(product.type)}<br>${esc(product.duration)} &middot; ${esc(product.level)}</div>
+      ${priceMarkup(product)}
+      ${buyButton(product)}
     </article>`;
 }

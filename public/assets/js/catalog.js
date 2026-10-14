@@ -1,29 +1,34 @@
-// Home page: hero cover stack, "start here" rows, filterable catalog grid.
+// Home page: hero shelf, "start here" cards, filterable catalog index.
 
 import { products, categories } from "/data/products.js";
 import { renderCover } from "./cover.js";
-import { renderCard, renderRow } from "./card.js";
+import { renderCard, renderIndexRow } from "./card.js";
 import { escapeHtml as esc } from "./site.js";
 import { initBuyButtons } from "./checkout.js";
 
 const featured = products.filter((p) => p.featured);
 
-function renderHeroStack() {
-  const stack = document.getElementById("hero-stack");
-  if (!stack) return;
-  // Visual order: left, centre (front), right.
-  const [a, b, c] = featured;
-  stack.innerHTML = [c, a, b].filter(Boolean).map((p) => renderCover(p)).join("");
+function renderShelf() {
+  const shelf = document.getElementById("hero-shelf");
+  if (!shelf) return;
+  shelf.innerHTML = products
+    .map(
+      (p) => `
+        <a class="shelf__item" href="/ebooks/${esc(p.slug)}" aria-label="${esc(p.title)}">
+          ${renderCover(p)}
+        </a>`
+    )
+    .join("");
 }
 
-function renderFeaturedRows() {
-  const rows = document.getElementById("featured-rows");
-  if (!rows) return;
-  rows.innerHTML = featured.map(renderRow).join("");
+function renderFeatured() {
+  const grid = document.getElementById("featured-grid");
+  if (!grid) return;
+  grid.innerHTML = featured.map(renderCard).join("");
 }
 
 function initCatalog() {
-  const grid = document.getElementById("catalog-grid");
+  const grid = document.getElementById("catalog-list");
   const filters = document.getElementById("filters");
   const count = document.getElementById("catalog-count");
   if (!grid || !filters) return;
@@ -44,7 +49,7 @@ function initCatalog() {
   const render = () => {
     const list = active === "all" ? products : products.filter((p) => p.category === active);
     grid.innerHTML = list.length
-      ? list.map(renderCard).join("")
+      ? list.map(renderIndexRow).join("")
       : `<p class="catalog__empty">Nothing in this category yet.</p>`;
     if (count) count.textContent = `${list.length} ${list.length === 1 ? "title" : "titles"}`;
   };
@@ -78,8 +83,8 @@ function scrollToHashAfterRender() {
   document.fonts?.ready.then(() => requestAnimationFrame(jump));
 }
 
-renderHeroStack();
-renderFeaturedRows();
+renderShelf();
+renderFeatured();
 initCatalog();
 initBuyButtons();
 scrollToHashAfterRender();

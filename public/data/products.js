@@ -30,7 +30,7 @@ export const products = [
     frequency: "4–5 sessions / week",
     equipment: "Full gym",
     pages: 96,
-    cover: "lime",
+    cover: "accent",
     featured: true,
     description: [
       "Three four-week phases — accumulation, intensification and peak — each with its own volume targets, rep ranges and rest rules. You open the PDF on Monday and the week is already written.",
@@ -142,7 +142,7 @@ export const products = [
     frequency: "3–4 sessions / week",
     equipment: "One kettlebell",
     pages: 64,
-    cover: "lime",
+    cover: "accent",
     featured: false,
     description: [
       "A complete conditioning program built around a single kettlebell. Sessions are 20–35 minutes, scaled by bell size and density, so the same book works for a 12 kg and a 32 kg.",
@@ -254,7 +254,7 @@ export const products = [
     frequency: "Daily · 15 min",
     equipment: "None",
     pages: 48,
-    cover: "lime",
+    cover: "accent",
     featured: false,
     description: [
       "Three weeks, one joint region per week: hips and ankles, thoracic spine and shoulders, then everything together. Each day is a 15-minute sequence with a timer and a simple before/after test.",

@@ -21,7 +21,7 @@ function renderNotFound() {
   document.title = "Not found — Orvenio Fitness";
   root.innerHTML = `
     <div class="simple">
-      <p class="eyebrow eyebrow--lime">404</p>
+      <p class="eyebrow eyebrow--accent">404</p>
       <h1 class="display h-xl">No such program.</h1>
       <p class="lead">That link doesn't match anything in the catalog. The programs are all one click away.</p>
       <div class="hero__actions">
@@ -77,7 +77,7 @@ function renderProduct(product) {
     <div class="product">
       <div class="product__visual">${renderCover(product)}</div>
       <div class="product__info">
-        <p class="eyebrow eyebrow--lime">${esc(product.type)} · No. ${esc(product.number)}</p>
+        <p class="eyebrow eyebrow--accent">${esc(product.type)} · No. ${esc(product.number)}</p>
         <h1 class="display h-l product__title">${esc(product.title)}</h1>
         <p class="product__tagline">${esc(product.tagline)}</p>
 
