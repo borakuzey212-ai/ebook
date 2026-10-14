@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/ebooks/:slug", "destination": "/product.html" }]
+}
