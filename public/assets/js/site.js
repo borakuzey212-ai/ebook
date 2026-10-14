@@ -66,5 +66,15 @@ function initFooterYear() {
   });
 }
 
+function enableSmoothScroll() {
+  // Switched on after load so the browser's own jump to #fragment stays
+  // instant; only in-page anchor clicks after that animate. (Not rAF-based:
+  // rAF never fires in a background tab.)
+  const enable = () => setTimeout(() => document.documentElement.classList.add("is-ready"), 0);
+  if (document.readyState === "complete") enable();
+  else window.addEventListener("load", enable, { once: true });
+}
+
 initMobileNav();
 initFooterYear();
+enableSmoothScroll();
